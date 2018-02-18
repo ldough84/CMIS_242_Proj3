@@ -11,15 +11,16 @@
 
 import java.util.ArrayList;
 
-public class Sequence {
+public final class Sequence {
     
-    static void Sequence() {}
-    static int count = 0;
+    private void Sequence() {}
+   
+    static int count;
     
-    public static int computeIterative(int n) {
-        int val1 = 0;
-        int val2 = 0;
-        int val3 = 0;
+    public static Integer computeIterative(int n) {
+        Integer val1 = 0;
+        Integer val2 = 0;
+        Integer val3 = 0;
         ArrayList<Integer> array = new ArrayList<Integer>();
         for (int i = 0; i <= n; i++) {
             if (i < 3) {
@@ -37,20 +38,22 @@ public class Sequence {
         return array.get(array.size() - 1);
     }
     
-    public static int computeRecursive(int n) {
-        count++;
+    public static Integer computeRecursive(int n) {
         if (n == 0) {
+            count ++;
             return 0;
         }
         else if (n == 1) {
+            count++;
             return 1;
         }
-        else{
+        else {
+            count++;
             return 2 * computeRecursive(n - 1) + computeRecursive(n - 2);
         }
     }
-    
-    public static int getCount() {
+ 
+    public static Integer getEfficiency() {
         return count;
     }
     
