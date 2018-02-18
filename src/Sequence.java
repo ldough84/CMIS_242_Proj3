@@ -1,12 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * 
+ * @filename Sequence.java
  * @author ldough
+ * @date 02/18/2018
+ * This Utility class creates methods for calculating a series of numbers and 
+ * returning a value, as well as a count of how many iterations or recursive
+ * calls were necessary to complete the calculation.
  */
 
 import java.util.ArrayList;
@@ -17,7 +16,9 @@ public final class Sequence {
    
     static int count;
     
-    public static Integer computeIterative(int n) {
+     //Iteratively computes the sequence of numbers described as "each term of 
+    //the sequence is twice the previous term plus the second previous term."
+    public static long computeIterative(int n) {
         Integer val1 = 0;
         Integer val2 = 0;
         Integer val3 = 0;
@@ -38,7 +39,9 @@ public final class Sequence {
         return array.get(array.size() - 1);
     }
     
-    public static Integer computeRecursive(int n) {
+    //Recursively computes the sequence of numbers described as "each term of 
+    //the sequence is twice the previous term plus the second previous term."
+    public static long computeRecursive(int n) {
         if (n == 0) {
             count ++;
             return 0;
